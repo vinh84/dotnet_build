@@ -1,6 +1,2 @@
-FROM ubuntu:latest
-RUN mkdir -p ~/.ssh
-RUN echo "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-RUN apt-get update \
-        && apt-get install -y openssh-client \
-        && rm -rf /var/lib/apt/lists/*
+FROM microsoft/dotnet:2.1-sdk-alpine
+RUN apk add --update nodejs nodejs-npm
